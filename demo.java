@@ -1,32 +1,41 @@
+import java.net.Socket;
+
+class Mobile {
+    String brand;
+    double price;
+    static String name; // Class Member Variable - Static Variable
+
+    // Object member method - Non-static Method
+    public void show() {
+        System.out.println(String.format("Name: %s Price: %s Brand %s", name, price, brand));
+    }
+
+    public static void show1(Mobile mobile) {
+        System.out.println("Name: " + name + " Price: " + mobile.price + " Brand: " + mobile.brand);
+    }
+}
 
 public class demo {
-    public static void main(String args[]) {
-        // Jagged array
-        int nums[][] = new int[3][];
 
-        nums[0] = new int[3];
-        nums[1] = new int[4];
-        nums[2] = new int[2];
-
-        for (int i = 0; i <= nums.length - 1; i++) {
-            for (int j = 0; j < nums[i].length; j++) {
-                nums[i][j] = (int) (Math.random() * 10);
-            }
-        }
-
-        // for (int i = 0; i < nums.length; i++) {
-        // for (int j = 0; j < nums[i].length; j++) {
-        // System.out.print(nums[i][j] + " ");
-        // }
-        // System.out.println();
-        // }
-
-        for (int[] arr : nums) {
-            for (int num : arr) {
-                System.out.print(num + " ");
-            }
-            System.out.println();
-        }
+    void add() {
 
     }
+
+    public static void main(String args[]) {
+
+        Mobile mobile = new Mobile();
+
+        mobile.brand = "Samsong";
+        mobile.price = 1500;
+        Mobile.name = "SmartPhone";
+
+        Mobile mobile1 = new Mobile();
+
+        mobile1.brand = "Apple";
+        mobile1.price = 1700;
+        Mobile.name = "Phone";
+        mobile.show();
+        Mobile.show1(mobile1);
+    }
+
 }
