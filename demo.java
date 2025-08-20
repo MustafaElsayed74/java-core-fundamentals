@@ -1,41 +1,47 @@
-import java.net.Socket;
+//Encapsulation => Separation of Data Definition (attributes - Access modifiers) from its usage (Methods - Getters/Setters)
 
-class Mobile {
-    String brand;
-    double price;
-    static String name; // Class Member Variable - Static Variable
+class Human {
 
-    // Object member method - Non-static Method
-    public void show() {
-        System.out.println(String.format("Name: %s Price: %s Brand %s", name, price, brand));
+    private int age;
+    private String name = "Mustafa";
+
+    public Human(String name, int age) {
+        this.name = name;
+        this.age = age;
     }
 
-    public static void show1(Mobile mobile) {
-        System.out.println("Name: " + name + " Price: " + mobile.price + " Brand: " + mobile.brand);
+    public Human() {
+        System.out.println("Hello from constructor");
     }
+
+    // Getter
+    public int getAge() {
+        return age;
+    }
+
+    // Setter
+    public void setAge(int age) {
+        this.age = age;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
 }
 
 public class demo {
 
-    void add() {
-
-    }
-
     public static void main(String args[]) {
 
-        Mobile mobile = new Mobile();
+        Human human = new Human();
+        human.setAge(23);
+        System.out.println(human.getAge());
 
-        mobile.brand = "Samsong";
-        mobile.price = 1500;
-        Mobile.name = "SmartPhone";
-
-        Mobile mobile1 = new Mobile();
-
-        mobile1.brand = "Apple";
-        mobile1.price = 1700;
-        Mobile.name = "Phone";
-        mobile.show();
-        Mobile.show1(mobile1);
     }
 
 }
