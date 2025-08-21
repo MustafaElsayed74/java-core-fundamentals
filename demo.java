@@ -1,47 +1,32 @@
-//Encapsulation => Separation of Data Definition (attributes - Access modifiers) from its usage (Methods - Getters/Setters)
-
-class Human {
-
-    private int age;
-    private String name = "Mustafa";
-
-    public Human(String name, int age) {
-        this.name = name;
-        this.age = age;
+class A {
+    public A() {
+        super();
+        System.out.println("In A");
     }
 
-    public Human() {
-        System.out.println("Hello from constructor");
+    public A(int a) {
+        System.out.println("In A int");
+    }
+}
+
+class B extends A {
+
+    public B() {
+        super();
+
+        System.out.println("In B");
     }
 
-    // Getter
-    public int getAge() {
-        return age;
+    public B(int a) {
+        this();
+        System.out.println("In B int");
     }
-
-    // Setter
-    public void setAge(int age) {
-        this.age = age;
-    }
-
-    public String getName() {
-        return name;
-    }
-
-    public void setName(String name) {
-        this.name = name;
-    }
-
 }
 
 public class demo {
 
     public static void main(String args[]) {
-
-        Human human = new Human();
-        human.setAge(23);
-        System.out.println(human.getAge());
-
+        B b = new B(2);
     }
 
 }
